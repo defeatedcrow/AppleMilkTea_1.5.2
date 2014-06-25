@@ -1,4 +1,4 @@
-## AppleMilkTea 1.6.X
+## AppleMilkTea 1.5.2
 
 ### 動作環境:
 ・Minecraft 1.5.2
