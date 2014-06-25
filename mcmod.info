@@ -1,0 +1,22 @@
+[
+  {
+    "description":"Enjoy a leisurely tea time.",
+    "parent":"",
+    "logoFile":"",
+    "credits":"defeatedcrow, RazzleberryFox, tsuteto, A.K.",
+    "dependencies":[],
+    "modid":"DCsAppleMilk",
+    "mcversion":"1.5.2",
+    "screenshots":[],
+    "authorList":[
+      "defeatedcrow"
+    ],
+    "name":"Apple&Milk&Tea!",
+    "url":"http://forum.minecraftuser.jp/viewtopic.php?f=13&t=17657",
+    "updateUrl":"",
+    "version":"1.5.2_1.15a",
+    "requiredMods":[
+      "Minecraft Forge1.5.2 7.8.1.737"
+    ]
+  }
+]
