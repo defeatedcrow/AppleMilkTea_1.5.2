@@ -14,7 +14,7 @@ import net.minecraft.world.World;
  * <br>デフォルト動作では、返却容器はなし、飲食時の効果は空腹度回復のポーション効果である。
  */
 public class EdibleItem extends ItemBlock implements IEdibleItem {
-
+	
 	public EdibleItem(int itemId) {
 		super(itemId);
 	}
@@ -31,6 +31,7 @@ public class EdibleItem extends ItemBlock implements IEdibleItem {
             --par1ItemStack.stackSize;
         }
 		this.returnItemStack(par3EntityPlayer, meta);
+		par3EntityPlayer.getFoodStats().addStats(this.getFoodStatus(meta), this.getFoodStatus(meta));
 		
 		if (!par2World.isRemote)
 		{
@@ -100,6 +101,11 @@ public class EdibleItem extends ItemBlock implements IEdibleItem {
 	public PotionEffect effectOnEaten(int meta) {
 		
 		return new PotionEffect(Potion.field_76443_y.id, 2, 2);
+	}
+
+	@Override
+	public int getFoodStatus(int meta) {
+		return 4;
 	}
 
 }

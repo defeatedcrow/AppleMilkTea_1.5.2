@@ -650,7 +650,7 @@ public class DCsLangRegister {
 		
 		
 		//items that have large amount damage
-		for (int i = 0 ; i < 3 ; i++)
+		for (int i = 0 ; i < 4 ; i++)
 		{
 			LanguageRegistry.addName(new ItemStack(DCsAppleMilk.itemCordial, 1, i), "Apple Liquor Bottle");
 			LanguageRegistry.instance().addNameForObject(new ItemStack(DCsAppleMilk.itemCordial, 1, i), "ja_JP", "りんご酒ボトル");

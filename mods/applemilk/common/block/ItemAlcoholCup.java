@@ -32,6 +32,19 @@ public class ItemAlcoholCup extends EdibleItemBlock{
 	}
 	
 	@Override
+	public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+        int meta = par1ItemStack.getItemDamage();
+		
+		if (!par2World.isRemote)
+		{
+			this.setPotionWithIce(par3EntityPlayer, meta);
+		}
+
+        return super.onEaten(par1ItemStack, par2World, par3EntityPlayer);
+    }
+	
+	@Override
 	public String getUnlocalizedName(ItemStack par1ItemStack)
 	{
 		int m = (par1ItemStack.getItemDamage());
@@ -125,6 +138,11 @@ public class ItemAlcoholCup extends EdibleItemBlock{
     {
     	return EnumAction.drink;
     }
+	
+	@Override
+	public int getFoodStatus(int meta) {
+		return 0;
+	}
 	
 	@Override
 	public int getMetadata(int par1)

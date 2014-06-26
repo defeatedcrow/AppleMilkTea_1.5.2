@@ -26,7 +26,7 @@ public class ItemBowlJP extends EdibleItemBlock{
 	@Override
 	public ItemStack getReturnContainer(int meta) {
 		
-		return DCsAppleMilk.SuccessLoadBamboo ? new ItemStack(LoadBambooHandler.bambooBasket, 1, 0) : new ItemStack(Item.bowlEmpty, 1, 0);
+		return (DCsAppleMilk.SuccessLoadBamboo && LoadBambooHandler.bambooBasket != null) ? new ItemStack(LoadBambooHandler.bambooBasket.itemID, 1, 0) : new ItemStack(Item.bowlEmpty, 1, 0);
 	}
 	
 	@Override

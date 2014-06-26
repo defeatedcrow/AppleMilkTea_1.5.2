@@ -242,6 +242,11 @@ public class ItemCocktail extends EdibleItemBlock{
 		return ret;
 	}
 	
+	@Override
+	public int getFoodStatus(int meta) {
+		return 4;
+	}
+	
 	public static void setPotionWithIce(EntityPlayer par1EntityPlayer, int meta)
 	{
 		ArrayList<PotionEffect> effect = getPotionWithIce(par1EntityPlayer, meta);

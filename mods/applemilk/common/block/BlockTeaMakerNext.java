@@ -299,9 +299,9 @@ public class BlockTeaMakerNext extends BlockContainer{
                 par2EntityPlayer.inventory.setInventorySlotContents(par2EntityPlayer.inventory.currentItem, (ItemStack)null);
             }
 			
-			if (!par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2WaterCell, 1, 1)))
+			if (!par2EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2WaterCell, 1, 0)))
     		{
-    			par2EntityPlayer.entityDropItem(new ItemStack(LoadIC2Handler.IC2WaterCell, 1, 1), 1);
+    			par2EntityPlayer.entityDropItem(new ItemStack(LoadIC2Handler.IC2WaterCell, 1, 0), 1);
     		}
 		}
 		else if (itemstack != null && DCsAppleMilk.SuccessLoadForestry)
@@ -309,14 +309,40 @@ public class BlockTeaMakerNext extends BlockContainer{
 			boolean flag = true;
 			ItemStack ret = null;
 			
-			if (LoadModHandler.getItem("waxCapsule") != null && LoadModHandler.getItem("waxCapsuleWater") != null)
+			if (LoadModHandler.getItem("emptyCapsule") != null && LoadModHandler.getItem("waxCapsuleWater") != null)
 			{
-				if (itemstack.itemID == LoadModHandler.getItem("waxCapsule").itemID)
+				if (itemstack.itemID == LoadModHandler.getItem("emptyCapsule").itemID)
 				{
 					flag = true;
-					ret = LoadModHandler.getItem("waxCapsuleWater");
+					ret = LoadModHandler.getItem("waterCapsule");
 				}
 			}
+			else if (LoadModHandler.getItem("emptyRefractory") != null && LoadModHandler.getItem("waterRefractory") != null)
+			{
+				if (itemstack.itemID == LoadModHandler.getItem("emptyRefractory").itemID)
+				{
+					flag = true;
+					ret = LoadModHandler.getItem("waterRefractory");
+				}
+			}
+			else if (LoadModHandler.getItem("emptyCan") != null && LoadModHandler.getItem("waterCan") != null)
+			{
+				if (itemstack.itemID == LoadModHandler.getItem("emptyCan").itemID)
+				{
+					flag = true;
+					ret = LoadModHandler.getItem("waterCan");
+				}
+			}
+			
+			if (flag && !par2EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
+            {
+                par2EntityPlayer.inventory.setInventorySlotContents(par2EntityPlayer.inventory.currentItem, (ItemStack)null);
+            }
+			
+			if (ret != null && !par2EntityPlayer.inventory.addItemStackToInventory(ret))
+    		{
+    			par2EntityPlayer.entityDropItem(ret, 1);
+    		}
 		}
 	}
 	

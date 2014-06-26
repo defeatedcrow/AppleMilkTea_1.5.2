@@ -49,7 +49,7 @@ public class EntityOrbFX extends EntityFX {
 		}
 		this.moveEntity(this.motionX, this.motionY, this.motionZ);
 	}
- 
+	
 	@Override
 	public int getFXLayer() {
 		return 2;

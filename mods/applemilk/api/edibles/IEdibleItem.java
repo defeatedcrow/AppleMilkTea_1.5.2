@@ -15,5 +15,10 @@ public interface IEdibleItem {
      * 飲食時のポーション効果
      */
 	public PotionEffect effectOnEaten(int meta);
+	
+	/**
+	 * 飲食時の空腹度回復量
+	 * */
+	public int getFoodStatus(int meta);
 
 }

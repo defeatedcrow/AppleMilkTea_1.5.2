@@ -166,5 +166,10 @@ public class ItemBlockTeaCup extends EdibleItemBlock{
 		
 		par3List.add(s);
 	}
+	
+	@Override
+	public int getFoodStatus(int meta) {
+		return 0;
+	}
 
 }

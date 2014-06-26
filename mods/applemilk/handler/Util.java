@@ -161,5 +161,10 @@ public class Util {
 		}
 		return flag;
 	}
+	
+	public static void increaceSaturation(EntityPlayer player, int amount, float amount2)
+	{
+		player.getFoodStats().addStats(amount, amount2);
+	}
 
 }

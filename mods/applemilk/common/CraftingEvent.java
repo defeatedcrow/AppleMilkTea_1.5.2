@@ -51,7 +51,7 @@ public class CraftingEvent implements ICraftingHandler {
 		
 		ArrayList<ItemStack> rets = new ArrayList<ItemStack>();
 		
-		for (int i = 0; i < 9 ; i++)
+		for (int i = 0; i < craftMatrix.getSizeInventory() ; i++)
 		{
 			ItemStack m = craftMatrix.getStackInSlot(i);
 			if (m != null && (m.itemID == DCsAppleMilk.teacupBlock.blockID || m.itemID == DCsAppleMilk.teaCup2.blockID)) {

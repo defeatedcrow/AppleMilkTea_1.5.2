@@ -31,6 +31,7 @@ public class EdibleItemBlock extends ItemBlock implements IEdibleItem {
             --par1ItemStack.stackSize;
         }
 		this.returnItemStack(par3EntityPlayer, meta);
+		par3EntityPlayer.getFoodStats().addStats(this.getFoodStatus(meta), this.getFoodStatus(meta));
 		
 		if (!par2World.isRemote && this.effectOnEaten(meta) != null)
 		{
@@ -93,13 +94,17 @@ public class EdibleItemBlock extends ItemBlock implements IEdibleItem {
 
 	/**
 	 * 飲食時のポーション効果をメタデータ毎に定義する。
-	 * <br>注意点として、ItemFoodのような空腹度回復効果ではなく、
-	 * ポーション効果のSaturationを利用して空腹度回復を行っている。
+	 * <br>1.5ではSaturationポーションが存在しないため、仮対応で短い持続回復を加えている。
 	 */
 	@Override
 	public PotionEffect effectOnEaten(int meta) {
 		
-		return new PotionEffect(Potion.field_76443_y.id, 2, 2);
+		return new PotionEffect(Potion.regeneration.id, 1, 0);
+	}
+	
+	@Override
+	public int getFoodStatus(int meta) {
+		return 4;
 	}
 
 }

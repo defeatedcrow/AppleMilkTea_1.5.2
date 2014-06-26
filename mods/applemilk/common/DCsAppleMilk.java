@@ -579,21 +579,6 @@ public class DCsAppleMilk{
 	        }
 	    }
 	    
-		if (Loader.isModLoaded("ExtraTrees"))
-			{
-			AMTLogger.loadingModInfo("ExtraTrees");
-			try
-			{
-				this.SuccessLoadExtraTrees = true;
-				(new LoadModHandler()).loadExtraTrees();
-				AMTLogger.loadedModInfo("ExtraTrees");
-			}
-			catch (Exception e) {
-				AMTLogger.failLoadingModInfo("ExtraTrees");
-				e.printStackTrace(System.err);
-			}
-		}
-	    
 	    if (Loader.isModLoaded("Railcraft"))
 	    {
 	    	AMTLogger.loadingModInfo("Railcraft");

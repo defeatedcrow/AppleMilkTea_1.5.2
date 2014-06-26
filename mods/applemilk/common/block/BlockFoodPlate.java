@@ -28,6 +28,7 @@ import mods.applemilk.client.particle.EntityDCCloudFX;
 import mods.applemilk.client.particle.ParticleTex;
 import mods.applemilk.common.*;
 import mods.applemilk.common.tile.TileSteak;
+import mods.applemilk.handler.Util;
 
 public class BlockFoodPlate extends BlockContainer{
 	
@@ -80,11 +81,8 @@ public class BlockFoodPlate extends BlockContainer{
         }
         else if (itemstack.itemID == DCsAppleMilk.chopsticks.itemID)
         {
-        	if (!par1World.isRemote)
-    		{
-    			if (currentMeta == 3) par5EntityPlayer.addPotionEffect(new PotionEffect(Potion.field_76443_y.id, 3, 2));
-    			else par5EntityPlayer.addPotionEffect(new PotionEffect(Potion.field_76443_y.id, 3, 3));
-    		}
+        	if (currentMeta == 3) Util.increaceSaturation(par5EntityPlayer, 7, 3.0F);
+			else Util.increaceSaturation(par5EntityPlayer, 12, 6.0F);
         	
         	par1World.setBlockToAir(par2, par3, par4);
     		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);

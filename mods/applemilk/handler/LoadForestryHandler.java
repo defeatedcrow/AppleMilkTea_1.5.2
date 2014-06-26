@@ -1,5 +1,6 @@
 package mods.applemilk.handler;
 
+import forestry.api.core.ItemInterface;
 import mods.applemilk.common.AMTLogger;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,30 +10,30 @@ public class LoadForestryHandler {
 	
 	public void load()
 	{
-		Item item = Util.getModItem("Forestry", "waxCapsule");
+		ItemStack item = ItemInterface.getItem("waxCapsule");
 		if (item != null) {
-			ItemStack register = new ItemStack(item, 1, 0);
+			ItemStack register = item;
 			if (register != null) {
 				LoadModHandler.registerModItems("emptyCapsule", register);
 			}
 		}
-		Item item2 = Util.getModItem("Forestry", "refractoryEmpty");
+		ItemStack item2 = ItemInterface.getItem("refractoryEmpty");
 		if (item2 != null) {
-			ItemStack register = new ItemStack(item2, 1, 0);
+			ItemStack register = item2;
 			if (register != null) {
 				LoadModHandler.registerModItems("emptyRefractory", register);
 			}
 		}
-		Item item3 = Util.getModItem("Forestry", "canEmpty");
+		ItemStack item3 = ItemInterface.getItem("canEmpty");
 		if (item3 != null) {
-			ItemStack register = new ItemStack(item3, 1, 0);
+			ItemStack register = item3;
 			if (register != null) {
 				LoadModHandler.registerModItems("emptyCan", register);
 			}
 		}
-		Item item4 = Util.getModItem("Forestry", "waxCapsuleWater");
+		ItemStack item4 = ItemInterface.getItem("waxCapsuleWater");
 		if (item4 != null) {
-			ItemStack register = new ItemStack(item4, 1, 0);
+			ItemStack register = item4;
 			if (register != null) {
 				LoadModHandler.registerModItems("waterCapsule", register);
 				if (LoadModHandler.registerModItems("containerWater", register)) {
@@ -40,9 +41,9 @@ public class LoadForestryHandler {
 				}
 			}
 		}
-		Item item5 = Util.getModItem("Forestry", "refractoryWater");
+		ItemStack item5 = ItemInterface.getItem("refractoryWater");
 		if (item5 != null) {
-			ItemStack register = new ItemStack(item5, 1, 0);
+			ItemStack register = item5;
 			if (register != null) {
 				LoadModHandler.registerModItems("waterRefractory", register);
 				if (LoadModHandler.registerModItems("containerWater", register)) {
@@ -50,9 +51,9 @@ public class LoadForestryHandler {
 				}
 			}
 		}
-		Item item6 = Util.getModItem("Forestry", "canWater");
+		ItemStack item6 = ItemInterface.getItem("canWater");
 		if (item6 != null) {
-			ItemStack register = new ItemStack(item6, 1, 0);
+			ItemStack register = item6;
 			if (register != null) {
 				LoadModHandler.registerModItems("waterCan", register);
 				if (LoadModHandler.registerModItems("containerWater", register)) {

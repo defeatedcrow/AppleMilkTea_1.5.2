@@ -14,9 +14,9 @@ import org.lwjgl.opengl.GL12;
 @SideOnly(Side.CLIENT)
 public class TileEntitySteakRenderer extends TileEntitySpecialRenderer
 {
-    private static final String steakTex = new String("applemilk:textures/entity/steak.png");
-    private static final String chickenTex = new String("applemilk:textures/entity/roastedchicken.png");
-    private static final String hamaguriTex = new String("applemilk:textures/entity/hamaguri.png");
+    private static final String steakTex = new String("/mods/applemilk/textures/entity/steak.png");
+    private static final String chickenTex = new String("/mods/applemilk/textures/entity/roastedchicken.png");
+    private static final String hamaguriTex = new String("/mods/applemilk/textures/entity/hamaguri.png");
     public static TileEntitySteakRenderer steakRenderer;
     private ModelSteak steakModel = new ModelSteak();
 

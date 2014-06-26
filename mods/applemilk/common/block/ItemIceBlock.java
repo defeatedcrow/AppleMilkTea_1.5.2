@@ -127,6 +127,11 @@ public class ItemIceBlock extends EdibleItemBlock{
 	}
 	
 	@Override
+	public int getFoodStatus(int meta) {
+		return 0;
+	}
+	
+	@Override
     public boolean itemInteractionForEntity(ItemStack itemstack, EntityLiving entity)
     {
         if (entity.worldObj.isRemote || entity == null)

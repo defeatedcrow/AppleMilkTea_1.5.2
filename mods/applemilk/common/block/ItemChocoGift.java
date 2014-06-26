@@ -63,6 +63,11 @@ public class ItemChocoGift extends EdibleItemBlock{
 	}
 	
 	@Override
+	public int getFoodStatus(int meta) {
+		return 0;
+	}
+	
+	@Override
 	public int getMetadata(int par1)
 	{
 		return par1;

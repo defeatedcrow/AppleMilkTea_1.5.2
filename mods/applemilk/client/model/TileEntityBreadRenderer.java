@@ -15,8 +15,8 @@ import org.lwjgl.opengl.GL12;
 @SideOnly(Side.CLIENT)
 public class TileEntityBreadRenderer extends TileEntitySpecialRenderer
 {
-    private static final String BreadTex = new String(Util.getEntityTexturePassNoAlt() + "breadBasket.png");
-    private static final String BottleTex = new String(Util.getEntityTexturePassNoAlt() + "bottleBasket.png");
+    private static final String BreadTex = new String(Util.getEntityTexturePassNoAlt() + "breadbasket.png");
+    private static final String BottleTex = new String(Util.getEntityTexturePassNoAlt() + "bottlebasket.png");
     public static TileEntityBreadRenderer BreadRenderer;
     private ModelBreads breadModel = new ModelBreads();
 

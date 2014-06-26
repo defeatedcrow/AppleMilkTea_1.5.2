@@ -16,6 +16,7 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mods.applemilk.client.model.*;
+import mods.applemilk.client.particle.*;
 import mods.applemilk.client.particle.ParticleTex;
 import mods.applemilk.common.AMTLogger;
 import mods.applemilk.common.CommonProxy;
@@ -107,6 +108,9 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerBlockHandler(new RenderCordial());
 		RenderingRegistry.registerBlockHandler(new RenderAlcoholCup());
 		RenderingRegistry.registerEntityRenderingHandler(EntityMelonBomb.class, new RenderMelonBomb());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlinkFX.class, new RenderDummyEntity());
+		RenderingRegistry.registerEntityRenderingHandler(EntityDCCloudFX.class, new RenderDummyEntity());
+		RenderingRegistry.registerEntityRenderingHandler(EntityOrbFX.class, new RenderDummyEntity());
 		VillagerRegistry.instance().registerVillagerType(DCsConfig.villagerRecipeID, (Util.getEntityTexturePassNoAlt() + "villager_cafe.png"));
 	}
 	

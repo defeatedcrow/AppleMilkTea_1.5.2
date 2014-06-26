@@ -106,7 +106,7 @@ public class BlockEmptyPan extends BlockContainer{
 		if (ID == Block.furnaceBurning.blockID || ID == Block.furnaceIdle.blockID) {
 			return true;
 		}
-		else if (LoadModHandler.matchItem("furnaceBlock", underBlock)) {
+		else if (LoadModHandler.matchItemID("furnaceBlock", underBlock)) {
 			return true;
 		}
 		else if (world.getBlockMaterial(x, y, z) == Material.fire) {

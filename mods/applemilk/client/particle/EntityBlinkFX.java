@@ -3,6 +3,7 @@ package mods.applemilk.client.particle;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.RenderEngine;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -39,10 +40,9 @@ public class EntityBlinkFX extends EntityFX {
         this.motionY *= 0.9099999785423279D;
         this.motionZ *= 0.9099999785423279D;
 	}
- 
+	
 	@Override
 	public int getFXLayer() {
 		return 2;
 	}
- 
 }

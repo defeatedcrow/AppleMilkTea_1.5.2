@@ -31,9 +31,8 @@ public class ItemFoodPlate extends EdibleItemBlock{
 	}
 	
 	@Override
-	public PotionEffect effectOnEaten(int meta) {
-		
-		return meta == 3 ? new PotionEffect(Potion.field_76443_y.id, 3, 2) : new PotionEffect(Potion.field_76443_y.id, 3, 3);
+	public int getFoodStatus(int meta) {
+		return meta == 3 ? 7 : 12;
 	}
 	
 	@Override

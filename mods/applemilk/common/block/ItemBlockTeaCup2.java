@@ -144,6 +144,11 @@ public class ItemBlockTeaCup2 extends EdibleItemBlock{
     {
         return 16;
     }
+	
+	@Override
+	public int getFoodStatus(int meta) {
+		return 0;
+	}
 
     /**
      * returns the action that specifies what animation to play when the items is being used
@@ -171,7 +176,7 @@ public class ItemBlockTeaCup2 extends EdibleItemBlock{
         	if (meta == 9) increaseDuration(entity);
         	entity.worldObj.playSoundAtEntity(entity, "random.pop", 0.4F, 1.8F);
         	
---itemstack.stackSize;
+        	--itemstack.stackSize;
         	
         	if (ret != null)
 	    	{

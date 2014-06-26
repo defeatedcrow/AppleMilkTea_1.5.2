@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mods.applemilk.common.AchievementRegister;
 import mods.applemilk.common.DCsAppleMilk;
+import mods.applemilk.handler.Util;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -114,6 +115,11 @@ public class ItemWallMug extends Item{
     				par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.damageBoost.id, m, sugar));
     			}
     		}
+		}
+		
+		if (fruit > 0)
+		{
+			Util.increaceSaturation(par3EntityPlayer, 4, 2.0F);
 		}
 		
 		return par1ItemStack;

@@ -35,7 +35,7 @@ public class LoadIC2Handler {
         //インスタントティー用の水入り容器登録
         if (this.IC2WaterCell != 0)
         {
-        	if (LoadModHandler.registerModItems("containerWater", new ItemStack(IC2WaterCell, 1, 1))) {
+        	if (LoadModHandler.registerModItems("containerWater", new ItemStack(IC2WaterCell, 1, 0))) {
 				AMTLogger.debugInfo("Succeeded to get IC2 water cell");
 			}
         }

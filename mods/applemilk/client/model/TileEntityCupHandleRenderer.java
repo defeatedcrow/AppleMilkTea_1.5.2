@@ -14,9 +14,9 @@ import org.lwjgl.opengl.GL12;
 @SideOnly(Side.CLIENT)
 public class TileEntityCupHandleRenderer extends TileEntitySpecialRenderer
 {
-    private static final String CupHandleTex = new String("applemilk:textures/blocks/porcelain.png");
-    private static final String SummerTex = new String("applemilk:textures/entity/summercup.png");
-    private static final String JPTex = new String("applemilk:textures/entity/JPcup.png");
+    private static final String CupHandleTex = new String("/mods/applemilk/textures/blocks/porcelain.png");
+    private static final String SummerTex = new String("/mods/applemilk/textures/entity/summercup.png");
+    private static final String JPTex = new String("/mods/applemilk/textures/entity/JPcup.png");
     public static TileEntityCupHandleRenderer cupRenderer;
     private ModelCupHandle cupHandleModel = new ModelCupHandle();
 

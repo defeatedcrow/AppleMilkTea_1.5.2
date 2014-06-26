@@ -25,6 +25,7 @@ import mods.applemilk.client.particle.EntityDCCloudFX;
 import mods.applemilk.client.particle.EntityOrbFX;
 import mods.applemilk.client.particle.ParticleTex;
 import mods.applemilk.common.*;
+import mods.applemilk.handler.Util;
 
 public class BlockBowl extends Block{
 	
@@ -72,12 +73,9 @@ public class BlockBowl extends Block{
     		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
     		return true;
         }
-        else if (itemstack.itemID == DCsAppleMilk.chopsticks.itemID)
+        else if (itemstack.itemID == DCsAppleMilk.chopsticks.itemID && currentMeta != 15)
         {
-        	if (!par1World.isRemote)
-    		{
-    			par5EntityPlayer.addPotionEffect(new PotionEffect(Potion.field_76443_y.id, 2, 2));
-    		}
+        	Util.increaceSaturation(par5EntityPlayer, 4, 3.0F);
         	
         	par1World.setBlockMetadataWithNotify(par2, par3, par4, 15, 3);
     		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
