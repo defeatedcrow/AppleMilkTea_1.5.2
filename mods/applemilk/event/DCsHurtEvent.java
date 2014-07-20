@@ -79,7 +79,7 @@ public class DCsHurtEvent {
 				if (potion instanceof PotionReflexBase)
 				{
 					PotionReflexBase reflex = (PotionReflexBase) potion;
-					if (reflex.effectFormer(target, source, reflex.getId(), damage))//反射処理に成功した時
+					if (reflex.effectFormer(target, source, effect, damage))//反射処理に成功した時
 					{
 						reduceAmp = reflex.getId();
 						canPrevent = true;

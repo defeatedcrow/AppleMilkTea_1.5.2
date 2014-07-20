@@ -58,7 +58,7 @@ public class TileEntityBottleRenderer extends TileEntitySpecialRenderer
         }
         else {
             int l2 = l & 7;
-            String texPass2 = new String ("applemilk:textures/blocks/contents" + canisterType[(l2)] + ".png");
+            String texPass2 = new String ("/mods/applemilk/textures/blocks/contents" + canisterType[(l2)] + ".png");
             contentsTex = new String(texPass2);
             GL11.glPushMatrix();
             this.bindTextureByName(contentsTex);

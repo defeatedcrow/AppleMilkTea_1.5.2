@@ -42,7 +42,7 @@ public class TileEntityCordialRenderer extends TileEntitySpecialRenderer
         byte k = (byte) stage;
         boolean aged = par0Tile.getAged();
         
-        String texPass = new String ("applemilk:textures/blocks/cordial_drink" + type[l] + ".png");
+        String texPass = new String ("/mods/applemilk/textures/blocks/cordial_drink" + type[l] + ".png");
         contentsTex = new String(texPass);
         
         GL11.glPushMatrix();

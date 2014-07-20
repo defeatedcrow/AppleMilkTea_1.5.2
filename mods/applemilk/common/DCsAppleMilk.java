@@ -13,8 +13,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-import mods.applemilk.api.RegisteredRecipeGet;
 import mods.applemilk.potion.*;
+import mods.applemilk.recipe.RegisterMakerRecipe;
+import mods.applemilk.recipe.RegisterManager;
+import mods.applemilk.recipe.RegisteredRecipeGet;
 import mods.applemilk.client.*;
 import mods.applemilk.common.block.*;
 import mods.applemilk.common.entity.EntityMelonBomb;
@@ -23,7 +25,6 @@ import mods.applemilk.common.item.*;
 import mods.applemilk.common.tile.*;
 import mods.applemilk.event.*;
 import mods.applemilk.handler.*;
-import mods.applemilk.handler.recipe.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -46,6 +47,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
 import cpw.mods.fml.common.registry.*;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -53,7 +55,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @Mod(
 		modid = "DCsAppleMilk",
 		name = "Apple&Milk&Tea!",
-		version = "1.5.2_1.15a",
+		version = "1.5.2_1.16a",
 		dependencies = "required-after:Forge@[7.8,);required-after:FML@[5.2,);after:IC2;after:BambooMod;after:pamharvestcraft;after:Forestry"
 		)
 @NetworkMod(
@@ -194,7 +196,7 @@ public class DCsAppleMilk{
 	public static boolean inClient = false;
 	public static boolean inServer = false;
 	public static boolean thirdParty = false;
-	public static boolean debugMode = true;
+	public static boolean debugMode = false;
 	public static boolean succeedAddPotion = false;
 	
 	//新ツール属性の追加
@@ -247,6 +249,9 @@ public class DCsAppleMilk{
 	@Mod.PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		//APIのインスタンス生成
+		RegisterManager.load();
+		
 		//Langファイル読み込み
 		
 		//Configuration setting
@@ -399,6 +404,12 @@ public class DCsAppleMilk{
 	    (new RegisterMakerRecipe()).registerIce();
 	    AMTLogger.trace("Registered new ice maker recipe");
 	    
+	}
+	
+	@Mod.IMCCallback
+	public void receiveIMC(IMCEvent event)
+	{
+		ReceivingIMCEvent.receiveIMC(event);
 	}
 	
 	@Mod.PostInit

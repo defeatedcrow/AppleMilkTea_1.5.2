@@ -63,7 +63,7 @@ public class ItemBlockTeaCup2 extends EdibleItemBlock{
 		{
 			return new PotionEffect(DCsAppleMilk.Immunization.id, 600, 1);
 		}
-		else if((meta == 2 || meta == 3) && DCsAppleMilk.succeedAddPotion)
+		else if((meta == 2 || meta == 3) && DCsAppleMilk.Immunization != null)
 		{
 			return new PotionEffect(DCsAppleMilk.Immunization.id, 600, 0);
 		}

@@ -92,11 +92,11 @@ public class ItemIceBlock extends EdibleItemBlock{
 		{
 			return new PotionEffect(Potion.nightVision.id, 900, 0);
 		}
-		else if ((meta == 5) && DCsAppleMilk.succeedAddPotion)//fruit
+		else if ((meta == 5) && DCsAppleMilk.Immunization != null)//fruit
 		{
 			return new PotionEffect(DCsAppleMilk.Immunization.id, 900, 0);
 		}
-		else if ((meta == 6) && DCsAppleMilk.succeedAddPotion)//lemon
+		else if ((meta == 6) && DCsAppleMilk.Immunization != null)//lemon
 		{
 			return new PotionEffect(DCsAppleMilk.Immunization.id, 900, 1);
 		}

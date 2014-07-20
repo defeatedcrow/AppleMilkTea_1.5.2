@@ -2,6 +2,7 @@ package mods.applemilk.api.potion;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 
 /**
@@ -26,6 +27,6 @@ public abstract class PotionReflexBase extends Potion{
 	 * <br>このメソッド内でダメージを受けた瞬間の処理を行い、成否判定をboolean型で返して下さい。
 	 * <br>trueを返した場合のみ、Amplifierの減少処理とダメージの無効化が行われます。
 	 * */
-	public abstract boolean effectFormer(EntityLiving target, DamageSource source, int id, int amount);
+	public abstract boolean effectFormer(EntityLiving target, DamageSource source, PotionEffect effect, float amount);
 
 }

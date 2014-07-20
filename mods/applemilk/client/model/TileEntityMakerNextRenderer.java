@@ -3,11 +3,11 @@ package mods.applemilk.client.model;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mods.applemilk.common.tile.TileMakerNext;
-import mods.applemilk.api.TeaRecipe;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
@@ -21,7 +21,7 @@ public class TileEntityMakerNextRenderer extends TileEntitySpecialRenderer
 
     public void renderTileEntityMakerAt(TileMakerNext par1Tile, double par2, double par4, double par6, float par8)
     {
-        this.setRotation((float)par2, (float)par4, (float)par6, par1Tile.getID(), par1Tile.getMilked());
+        this.setRotation((float)par2, (float)par4, (float)par6, par1Tile);
     }
 
     /**
@@ -33,20 +33,16 @@ public class TileEntityMakerNextRenderer extends TileEntitySpecialRenderer
         makerRenderer = this;
     }
 
-    public void setRotation(float par1, float par2, float par3, byte par4, boolean milk)
+    public void setRotation(float par1, float par2, float par3, TileMakerNext tile)
     {
-        ModelMakerNext model = this.nextModel;
-        String tex = TeaRecipe.getTex(par4);
+    	ModelMakerNext model = this.nextModel;
+        String tex = tile.getCurrentTexture();
+        boolean hasItem = (tile.getItemStack() != null);
+        boolean milk = tile.getMilked();
+        
         makerTex = new String(tex);
 
-        if (par4 == 0)
-        {
-        	this.bindTextureByName(emptyTex);
-        }
-        else
-        {
-        	this.bindTextureByName(makerTex);
-        }
+        this.bindTextureByName(makerTex);
         
         GL11.glPushMatrix();
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);

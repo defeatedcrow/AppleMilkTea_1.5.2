@@ -114,29 +114,29 @@ public class BlockTeaMaker extends BlockContainer{
                 		}
             			else if (meta == 3)
             			{
-            				if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Mug != 0 && itemstack.itemID == LoadIC2Handler.IC2Mug)
-            				{
-            					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
-                                {
-                                    par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);
-                                }
-                    			
-                    			if (!par5EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 2)))
-                        		{
-                        			par5EntityPlayer.entityDropItem((new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 2)), 1);
-                        		}
-                    			
-                    			if (par1World.rand.nextInt(3) == 0 && !par1World.isRemote)
-                    			{
-                    				par1World.setBlock(par2, par3, par4, DCsAppleMilk.teaMakerNext.blockID, dir, 3);
-                    				TileMakerNext tile2 = (TileMakerNext) par1World.getBlockTileEntity(par2, par3, par4);
-                    				tile2.setID((byte)0);
-                    				tile2.setMilk(false);
-                    			}
-                        		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
-                        		return true;
-            				}
-            				else if (itemstack.itemID == DCsAppleMilk.emptyCup.blockID)
+//            				if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Mug != 0 && itemstack.itemID == LoadIC2Handler.IC2Mug)
+//            				{
+//            					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
+//                                {
+//                                    par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);
+//                                }
+//                    			
+//                    			if (!par5EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 2)))
+//                        		{
+//                        			par5EntityPlayer.entityDropItem((new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 2)), 1);
+//                        		}
+//                    			
+//                    			if (par1World.rand.nextInt(3) == 0 && !par1World.isRemote)
+//                    			{
+//                    				par1World.setBlock(par2, par3, par4, DCsAppleMilk.teaMakerNext.blockID, dir, 3);
+//                    				TileMakerNext tile2 = (TileMakerNext) par1World.getBlockTileEntity(par2, par3, par4);
+//                    				tile2.setID((byte)0);
+//                    				tile2.setMilk(false);
+//                    			}
+//                        		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
+//                        		return true;
+//            				}
+            				if (itemstack.itemID == DCsAppleMilk.emptyCup.blockID)
             				{
             					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
                                 {
@@ -193,29 +193,29 @@ public class BlockTeaMaker extends BlockContainer{
                 		}
             			else if (meta == 2)
             			{
-            				if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Mug != 0 && itemstack.itemID == LoadIC2Handler.IC2Mug)
-            				{
-            					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
-                                {
-                                    par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);
-                                }
-                    			
-                    			if (!par5EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 1)))
-                        		{
-                        			par5EntityPlayer.entityDropItem((new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 1)), 1);
-                        		}
-                    			
-                    			if (par1World.rand.nextInt(3) == 0 && !par1World.isRemote)
-                    			{
-                    				par1World.setBlock(par2, par3, par4, DCsAppleMilk.teaMakerNext.blockID, dir, 3);
-                    				TileMakerNext tile2 = (TileMakerNext) par1World.getBlockTileEntity(par2, par3, par4);
-                    				tile2.setID((byte)0);
-                    				tile2.setMilk(false);
-                    			}
-                        		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
-                        		return true;
-            				}
-            				else if (itemstack.itemID == DCsAppleMilk.emptyCup.blockID)
+//            				if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Mug != 0 && itemstack.itemID == LoadIC2Handler.IC2Mug)
+//            				{
+//            					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
+//                                {
+//                                    par5EntityPlayer.inventory.setInventorySlotContents(par5EntityPlayer.inventory.currentItem, (ItemStack)null);
+//                                }
+//                    			
+//                    			if (!par5EntityPlayer.inventory.addItemStackToInventory(new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 1)))
+//                        		{
+//                        			par5EntityPlayer.entityDropItem((new ItemStack(LoadIC2Handler.IC2MugCoffee, 1, 1)), 1);
+//                        		}
+//                    			
+//                    			if (par1World.rand.nextInt(3) == 0 && !par1World.isRemote)
+//                    			{
+//                    				par1World.setBlock(par2, par3, par4, DCsAppleMilk.teaMakerNext.blockID, dir, 3);
+//                    				TileMakerNext tile2 = (TileMakerNext) par1World.getBlockTileEntity(par2, par3, par4);
+//                    				tile2.setID((byte)0);
+//                    				tile2.setMilk(false);
+//                    			}
+//                        		par1World.playSoundAtEntity(par5EntityPlayer, "random.pop", 0.4F, 1.8F);
+//                        		return true;
+//            				}
+            				if (itemstack.itemID == DCsAppleMilk.emptyCup.blockID)
             				{
             					if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
                                 {
@@ -259,7 +259,7 @@ public class BlockTeaMaker extends BlockContainer{
 		else if (ID == Item.dyePowder.itemID && meta == 3) m = 8; //cocoa
 		else if (ID == DCsAppleMilk.EXItems.itemID && meta == 2) m = 6; //green tea
 		else if (ID == DCsAppleMilk.EXItems.itemID && meta == 3) m = 4; //tea
-		else if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Coffeepowder != 0 && ID == LoadIC2Handler.IC2Coffeepowder) m = 2; //IC2 coffee
+//		else if (DCsAppleMilk.SuccessLoadIC2 && LoadIC2Handler.IC2Coffeepowder != 0 && ID == LoadIC2Handler.IC2Coffeepowder) m = 2; //IC2 coffee
 		else if (ID == DCsAppleMilk.gratedApple.itemID && meta < 2) m = 10;//apple
 		else if (ID == DCsAppleMilk.gratedApple.itemID && meta == 2) m = 12;//lemon
 		else if (ID == DCsAppleMilk.gratedApple.itemID && meta == 3) m = 2;//coffee

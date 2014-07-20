@@ -22,6 +22,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import mods.applemilk.*;
 import mods.applemilk.common.DCsAppleMilk;
+import mods.applemilk.handler.Util;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -73,7 +74,7 @@ public class ItemIcyToffyApple extends ItemFood {
 			par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 600, 0));
 			break;
 		case 4:
-			par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.field_76443_y.id, 1, 0));
+			Util.increaceSaturation(par3EntityPlayer, 2, 3.0F);
 			break;
 		case 5:
 			alt = true;

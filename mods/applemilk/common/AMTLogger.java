@@ -41,4 +41,9 @@ public class AMTLogger {
 		}
 	}
 
+	public static void warn(String msg) {
+		logger.setParent(FMLLog.getLogger());
+		logger.log(Level.WARNING, msg);
+	}
+
 }
