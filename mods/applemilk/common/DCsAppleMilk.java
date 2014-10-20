@@ -55,7 +55,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @Mod(
 		modid = "DCsAppleMilk",
 		name = "Apple&Milk&Tea!",
-		version = "1.5.2_1.16a",
+		version = "1.5.2_1.17a",
 		dependencies = "required-after:Forge@[7.8,);required-after:FML@[5.2,);after:IC2;after:BambooMod;after:pamharvestcraft;after:Forestry"
 		)
 @NetworkMod(

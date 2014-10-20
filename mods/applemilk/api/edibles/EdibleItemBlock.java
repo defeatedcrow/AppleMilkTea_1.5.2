@@ -1,5 +1,6 @@
 package mods.applemilk.api.edibles;
 
+import mods.applemilk.api.events.EatEdiblesEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemBlock;
@@ -7,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.Event.Result;
 
 /**
  * 食べられるブロックの作成を補助するためのクラス。
@@ -24,12 +27,34 @@ public class EdibleItemBlock extends ItemBlock implements IEdibleItem {
 	 */
 	public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
+		boolean flag = false;
+		EatEdiblesEvent event = new EatEdiblesEvent(par2World, par3EntityPlayer, par1ItemStack);
+		
+		MinecraftForge.EVENT_BUS.post(event);
+		
+		if (event.hasResult() && event.getResult() == Result.ALLOW)
+		{
+			if (!par3EntityPlayer.capabilities.isCreativeMode)
+	        {
+	            --par1ItemStack.stackSize;
+	        }
+			flag = true;
+		}
+		
+        if (event.isCanceled())
+        {
+            return par1ItemStack;
+        }
+		
+        
 		int meta = par1ItemStack.getItemDamage();
 		
-		if (!par3EntityPlayer.capabilities.isCreativeMode)
-        {
-            --par1ItemStack.stackSize;
-        }
+		if (!flag){
+			if (!par3EntityPlayer.capabilities.isCreativeMode)
+	        {
+	            --par1ItemStack.stackSize;
+	        }
+		}
 		this.returnItemStack(par3EntityPlayer, meta);
 		par3EntityPlayer.getFoodStats().addStats(this.getFoodStatus(meta), this.getFoodStatus(meta));
 		

@@ -15,10 +15,11 @@ import org.lwjgl.opengl.GL12;
 public class TileEntityCupHandleRenderer extends TileEntitySpecialRenderer
 {
     private static final String CupHandleTex = new String("/mods/applemilk/textures/blocks/porcelain.png");
-    private static final String SummerTex = new String("/mods/applemilk/textures/entity/summercup.png");
+    private static final String cupSummerTex = new String("/mods/applemilk/textures/blocks/blueglass.png");
     private static final String JPTex = new String("/mods/applemilk/textures/entity/JPcup.png");
     public static TileEntityCupHandleRenderer cupRenderer;
     private ModelCupHandle cupHandleModel = new ModelCupHandle();
+    private ModelTeaCup cupModel = new ModelTeaCup();
 
     public void renderTileEntityCupAt(TileCupHandle par1TileCupHandle, double par2, double par4, double par6, float par8)
     {
@@ -37,10 +38,11 @@ public class TileEntityCupHandleRenderer extends TileEntitySpecialRenderer
     public void setRotation(float par1, float par2, float par3, byte par4)
     {
         ModelCupHandle modelCupHandle = this.cupHandleModel;
+        ModelTeaCup modelCup = this.cupModel;
 
         if (DCsConfig.useSummerRender && !DCsConfig.useJapaneseCup)
         {
-        	this.bindTextureByName(SummerTex);
+        	this.bindTextureByName(cupSummerTex);
         	
         	GL11.glPushMatrix();
             GL11.glEnable(GL12.GL_RESCALE_NORMAL);
@@ -59,8 +61,9 @@ public class TileEntityCupHandleRenderer extends TileEntitySpecialRenderer
             GL11.glTranslatef((float)par1 + 0.5F, (float)par2 + 1.5F, (float)par3 + 0.5F);
             GL11.glScalef(1.0F, -1.0F, -1.0F);
             GL11.glRotatef(0.0F, 0.0F, 0.0F, 0.0F);
-            GL11.glColor4f(2.0F, 2.0F, 2.0F, 0.25F);
-            modelCupHandle.renderSummer((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.5F);
+            modelCup.render((Entity)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
+            this.cupHandleModel.render((Entity)null, 0.0F, 0.0F, 0.0F, par4, 0.0F, 0.0625F);
             
             GL11.glDisable(GL11.GL_STENCIL_TEST);
             GL11.glDisable(GL12.GL_RESCALE_NORMAL);

@@ -82,9 +82,9 @@ public class ModelTeaCup extends ModelBase
   {
     super.render(entity, f, f1, f2, f3, f4, f5);
     this.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    handle1.render(f5);
-    handle3.render(f5);
-    handle2.render(f5);
+//    handle1.render(f5);
+//    handle3.render(f5);
+//    handle2.render(f5);
     bottom.render(f5);
     sideF.render(f5);
     sideB.render(f5);
@@ -109,9 +109,9 @@ public class ModelTeaCup extends ModelBase
   public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
     super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    this.handle1.rotateAngleY = f3 / (180F / (float)Math.PI);
-    this.handle2.rotateAngleY = f3 / (180F / (float)Math.PI);
-    this.handle3.rotateAngleY = f3 / (180F / (float)Math.PI);
+//    this.handle1.rotateAngleY = f3 / (180F / (float)Math.PI);
+//    this.handle2.rotateAngleY = f3 / (180F / (float)Math.PI);
+//    this.handle3.rotateAngleY = f3 / (180F / (float)Math.PI);
     
     this.bottom.rotateAngleY = f3 / (180F / (float)Math.PI);
     this.sideF.rotateAngleY = f3 / (180F / (float)Math.PI);

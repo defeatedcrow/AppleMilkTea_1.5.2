@@ -49,10 +49,10 @@ public class RenderCupSummer implements ISimpleBlockRenderingHandler{
 				renderInvCuboid(renderer, block,  6.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 7.0F/16.0F, 10.0F/16.0F,  this.waterIcon);
 			}
 			else if(block == DCsAppleMilk.teacupBlock) {
-				renderInvCuboid(renderer, block, 6.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 7.0F/16.0F, 10.0F/16.0F, this.contentsIcon);
+				renderInvCuboid(renderer, block,  6.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 7.0F/16.0F, 10.0F/16.0F,  this.contentsIcon);
 			}
 			else {
-				renderInvCuboid(renderer, block, 6.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 7.0F/16.0F, 10.0F/16.0F, this.contents2);
+				renderInvCuboid(renderer, block,  6.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 7.0F/16.0F, 10.0F/16.0F,  this.contents2);
 			}
 			
 		}
@@ -66,40 +66,40 @@ public class RenderCupSummer implements ISimpleBlockRenderingHandler{
 		int meta = world.getBlockMetadata(x, y, z);
 		this.boxIcon = DCsAppleMilk.emptyCup.getBlockTextureFromSide(1);
 		this.contentsIcon = DCsAppleMilk.teacupBlock.getIcon(0, meta);
-		this.waterIcon = Block.waterStill.getBlockTextureFromSide(1);
 		this.contents2 = DCsAppleMilk.teaCup2.getIcon(0, meta);
+		this.waterIcon = Block.waterStill.getBlockTextureFromSide(1);
 		
 		if (modelId == this.getRenderId())
 		{
-			if (DCsConfig.noUseCupDirection)
-			{
-				//bottom
-				renderer.setOverrideBlockTexture(this.boxIcon);
-				block.setBlockBounds(5.0F/16.0F, 0.0F/16.0F, 5.0F/16.0F, 11.0F/16.0F, 2.0F/16.0F, 11.0F/16.0F);
-				renderer.setRenderBoundsFromBlock(block);
-				renderer.renderStandardBlock(block, x, y, z);
-				
-				//box
-				renderer.setOverrideBlockTexture(this.boxIcon);
-				block.setBlockBounds(5.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 6.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
-				renderer.setRenderBoundsFromBlock(block);
-				renderer.renderStandardBlock(block, x, y, z);
-				renderer.setOverrideBlockTexture(this.boxIcon);
-				block.setBlockBounds(5.0F/16.0F, 2.0F/16.0F, 5.0F/16.0F, 11.0F/16.0F, 9.0F/16.0F, 6.0F/16.0F);
-				renderer.setRenderBoundsFromBlock(block);
-				renderer.renderStandardBlock(block, x, y, z);
-				renderer.setOverrideBlockTexture(this.boxIcon);
-				block.setBlockBounds(10.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 11.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
-				renderer.setRenderBoundsFromBlock(block);
-				renderer.renderStandardBlock(block, x, y, z);
-				renderer.setOverrideBlockTexture(this.boxIcon);
-				block.setBlockBounds(6.0F/16.0F, 2.0F/16.0F, 10.0F/16.0F, 10.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
-				renderer.setRenderBoundsFromBlock(block);
-				renderer.renderStandardBlock(block, x, y, z);
-			}
+//			if (DCsConfig.noUseCupDirection)
+//			{
+//				//bottom
+//				renderer.setOverrideBlockTexture(this.boxIIcon);
+//				block.setBlockBounds(5.0F/16.0F, 0.0F/16.0F, 5.0F/16.0F, 11.0F/16.0F, 2.0F/16.0F, 11.0F/16.0F);
+//				renderer.setRenderBoundsFromBlock(block);
+//				renderer.renderStandardBlock(block, x, y, z);
+//				
+//				//box
+//				renderer.setOverrideBlockTexture(this.boxIIcon);
+//				block.setBlockBounds(5.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 6.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
+//				renderer.setRenderBoundsFromBlock(block);
+//				renderer.renderStandardBlock(block, x, y, z);
+//				renderer.setOverrideBlockTexture(this.boxIIcon);
+//				block.setBlockBounds(5.0F/16.0F, 2.0F/16.0F, 5.0F/16.0F, 11.0F/16.0F, 9.0F/16.0F, 6.0F/16.0F);
+//				renderer.setRenderBoundsFromBlock(block);
+//				renderer.renderStandardBlock(block, x, y, z);
+//				renderer.setOverrideBlockTexture(this.boxIIcon);
+//				block.setBlockBounds(10.0F/16.0F, 2.0F/16.0F, 6.0F/16.0F, 11.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
+//				renderer.setRenderBoundsFromBlock(block);
+//				renderer.renderStandardBlock(block, x, y, z);
+//				renderer.setOverrideBlockTexture(this.boxIIcon);
+//				block.setBlockBounds(6.0F/16.0F, 2.0F/16.0F, 10.0F/16.0F, 10.0F/16.0F, 9.0F/16.0F, 11.0F/16.0F);
+//				renderer.setRenderBoundsFromBlock(block);
+//				renderer.renderStandardBlock(block, x, y, z);
+//			}
 			
 			
-			if (meta == 0 || block == DCsAppleMilk.emptyCup)
+			if (block == DCsAppleMilk.emptyCup)
 			{
 				renderer.setOverrideBlockTexture(this.waterIcon);
 				block.setBlockBounds(6.0F/16.0F, 1.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F, 6.0F/16.0F, 10.0F/16.0F);
